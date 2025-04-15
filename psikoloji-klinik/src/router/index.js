@@ -1,8 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+// GitHub Pages ile uyumlu router için baz URL'yi doğru şekilde ayarla
+const base = import.meta.env.BASE_URL || '/selin-kanay/'
+
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(base),
   routes: [
     {
       path: '/',
@@ -38,6 +41,11 @@ const router = createRouter({
       path: '/randevu',
       name: 'appointment',
       component: () => import('../views/AppointmentView.vue')
+    },
+    // Bulunamayan rotalar için yönlendirme
+    {
+      path: '/:catchAll(.*)',
+      redirect: '/'
     }
   ],
   scrollBehavior() {

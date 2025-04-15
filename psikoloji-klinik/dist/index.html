@@ -5,15 +5,28 @@
     <link rel="icon" href="/selin-kanay/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uzm. Psk. Selin Kanay</title>
+    <!-- Temel URL'yi doğru ayarla -->
+    <base href="/selin-kanay/">
+    <!-- SPA GitHub Pages yönlendirme scripti -->
+    <script type="text/javascript">
+      // SPA için GitHub Pages URL yönlendirme çözümü
+      (function(){
+        // URL'deki fragman yönlendirmesini kontrol et
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/selin-kanay/assets/index-4ed1376f.js"></script>
+    <script type="module" crossorigin src="/selin-kanay/assets/index-d620eaaf.js"></script>
     <link rel="stylesheet" href="/selin-kanay/assets/index-02a7f044.css">
   </head>
   <body>
     <div id="app"></div>
-    
   </body>
 </html> 
